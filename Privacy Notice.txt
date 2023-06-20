@@ -1,0 +1,59 @@
+DDQL's Amazon Music Manager Consent Privacy Notice
+
+
+Thank you for choosing DDQL's Amazon Music Manager ("the Application"). This Privacy Notice is intended to inform you about the types of personal data we collect, how we use it, and the choices you have regarding your personal data. This Notice applies to the use of the Application and the associated services provided by DDQL.
+
+1. Personal Data Collection and Usage
+
+1.1. Account Information: When you use the Application and connect with your Amazon Account, we may collect certain account information provided by Amazon, which may include your name, email address, profile picture, and any other information you have made publicly available.
+
+1.2. Playlist Information: The Application requires access to your Amazon Music playlists to provide its functionality. We may collect and process information about the playlists you create, modify, and delete within the Application.
+
+2. Purpose and Legal Basis for Processing
+
+2.1. The personal data collected is used for the following purposes:
+
+- Providing and maintaining the functionality of the Application.
+- Authenticating your Amazon Account and enabling access to your playlists.
+- Displaying your playlists within the Application's user interface.
+- Allowing you to modify and remove your playlists within the Application.
+- Sending important service-related communications regarding the Application.
+
+2.2. The legal basis for processing your personal data is your explicit consent, which you provide when you connect your Amazon Account to the Application and use its features.
+
+3. Data Sharing and Disclosure
+
+3.1. We may share your personal data with third-party service providers who assist us in providing and maintaining the Application. These service providers are bound by contractual obligations to keep your personal data confidential and secure.
+
+3.2. We may disclose your personal data if required to do so by law or in response to valid legal requests from government authorities or other third parties.
+
+4. Data Security
+
+4.1. We take the security of your personal data seriously and implement appropriate technical and organizational measures to protect it from unauthorized access, alteration, disclosure, or destruction.
+
+4.2. However, no method of transmission over the internet or electronic storage is completely secure, and therefore, we cannot guarantee absolute security of your personal data.
+
+5. Data Retention
+
+5.1. We will retain your personal data only for as long as necessary to fulfill the purposes outlined in this Privacy Notice, unless a longer retention period is required or permitted by law.
+
+5.2. If you wish to request the deletion of your personal data from our systems, please contact us using the contact information provided at the end of this Notice.
+
+6. Your Rights
+
+6.1. You have the right to access, update, and correct your personal data held by us. You may also have the right to restrict or object to the processing of your personal data under applicable data protection laws.
+
+6.2. To exercise your rights or if you have any questions or concerns regarding the processing of your personal data, please contact us using the contact information provided at the end of this Notice.
+
+7. Changes to this Privacy Notice
+
+7.1. We reserve the right to update or modify this Privacy Notice from time to time to reflect changes in our practices or legal obligations. We will provide notice of any substantial changes through the Application or other means.
+
+8. Contact Us
+
+If you have any questions, comments, or concerns about this Privacy Notice or our privacy practices, please contact us at:
+ddqlpajama@gmail.com
+
+By using the Application, you acknowledge that you have read and understood this Privacy Notice and consent to the collection, use, and disclosure of your personal data as described herein.
+
+Thank you for your trust in DDQL's Amazon Music Manager.
