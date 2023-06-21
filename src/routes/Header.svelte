@@ -1,108 +1,34 @@
-<script>
+<script lang="ts">
 	import { page } from '$app/stores';
 	import logo from '$lib/images/svelte-logo.svg';
 	import github from '$lib/images/github.svg';
+
+	interface NavLink {
+		label: string;
+		href: string;
+	}
+
+	const navLinks: NavLink[] = [
+		{ label: 'Home', href: '/' },
+		{ label: 'About', href: '/about' }
+	];
 </script>
 
-<header>
-	<div class="corner">
-		<a href="https://kit.svelte.dev">
-			<img src={logo} alt="SvelteKit" />
-		</a>
+<div class="navbar bg-base-100 justify-between">
+	<div class="flex-1">
+		<p class="normal-case text-xl">DDQL's Amazon Music Manager</p>
 	</div>
-
-	<nav>
-		<ul>
-			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
-				<a href="/">Home</a>
-			</li>
-			<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
-				<a href="/about">About</a>
-			</li>
-			<li aria-current={$page.url.pathname.startsWith('/sverdle') ? 'page' : undefined}>
-				<a href="/sverdle">Sverdle</a>
-			</li>
-		</ul>
-	</nav>
-
-	<div class="corner">
-		<a href="https://github.com/ddqlpajama/AmazonMusicManager">
+	<div class="w-1/6 flex-row justify-between">
+		{#each navLinks as navLink}
+			<a role="button" class="font-semibold hover:underline" href={navLink.href}>{navLink.label}</a>
+		{/each}
+	</div>
+	<div class="flex-1 justify-end">
+		<a class="w-10" href="https://github.com/ddqlpajama/AmazonMusicManager">
 			<img src={github} alt="GitHub" />
 		</a>
 	</div>
-</header>
+</div>
 
 <style lang="postcss">
-	header {
-		display: flex;
-		justify-content: space-between;
-	}
-
-	.corner {
-		width: 3em;
-		height: 3em;
-	}
-
-	.corner a {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 100%;
-		height: 100%;
-	}
-
-	.corner img {
-		width: 2em;
-		height: 2em;
-		object-fit: contain;
-	}
-
-	nav {
-		display: flex;
-		justify-content: center;
-		width: 50%;
-	}
-
-	ul {
-		position: relative;
-		padding: 0;
-		margin: 0;
-		height: 3em;
-		width: 100%;
-		display: flex;
-		justify-content: space-around;
-		align-items: center;
-		list-style: none;
-		background-size: contain;
-	}
-
-	li {
-		position: relative;
-		height: 100%;
-	}
-
-	li[aria-current='page']::before {
-		--size: 6px;
-		content: '';
-		width: 0;
-		height: 0;
-		position: absolute;
-		top: 0;
-		left: calc(50% - var(--size));
-		border: var(--size) solid transparent;
-		border-top: var(--size) solid;
-	}
-
-	nav a {
-		display: flex;
-		height: 100%;
-		align-items: center;
-		padding: 0 0.5rem;
-		font-weight: 700;
-		font-size: 0.8rem;
-		text-transform: uppercase;
-		letter-spacing: 0.1em;
-		text-decoration: none;
-		transition: color 0.2s linear;
-	}
 </style>
