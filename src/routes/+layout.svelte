@@ -1,14 +1,28 @@
-<script>
+<script lang="ts">
+	import { onMount } from 'svelte';
 	import Header from './Header.svelte';
 	import './styles.css';
+
+	let amazonroot: HTMLDivElement;
+	let onAmazonLoginReady: () => void;
+
+	onMount(() => {
+		var a = document.createElement('script');
+		a.type = 'text/javascript';
+		a.async = true;
+		a.id = 'amazon-login-sdk';
+		a.src = 'https://assets.loginwithamazon.com/sdk/na/login1.js';
+		amazonroot.appendChild(a);
+
+		onAmazonLoginReady = 
+	});
 </script>
 
-<div class="app">
+<div class="flex flex-col min-h-screen">
+	<div bind:this={amazonroot} />
 	<Header />
 
-	<main>
-		<slot />
-	</main>
+	<slot />
 
 	<footer>
 		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
@@ -16,23 +30,6 @@
 </div>
 
 <style lang="postcss">
-	.app {
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
-	}
-
-	main {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		padding: 1rem;
-		width: 100%;
-		max-width: 64rem;
-		margin: 0 auto;
-		box-sizing: border-box;
-	}
-
 	footer {
 		display: flex;
 		flex-direction: column;
