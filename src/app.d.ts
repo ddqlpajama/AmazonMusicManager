@@ -7,6 +7,12 @@ declare global {
 		// interface PageData {}
 		// interface Platform {}
 	}
+
+	interface Window {
+		amazon: any;
+		options: any;
+		onAmazonLoginReady: () => void
+	}
 }
 
 export {};
