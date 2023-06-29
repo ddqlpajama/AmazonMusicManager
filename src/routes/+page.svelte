@@ -1,16 +1,22 @@
 <script lang='ts'>
-	import { onMount } from "svelte";
-
 	const handleAmazonLoginClicked = () => {
-		let options: any = {};
-		options.scope = 'profile';
-		options.scope_data = {
-			'profile': {'essential': false}
+		const byteArray = new Uint8Array(32);
+		crypto.getRandomValues(byteArray);
+		const state = Array.from(byteArray).map(byte => byte.toString(16).padStart(2, '0')).join('');
+
+		let options = {
+			scope: 'amazon_music:access',
+			response_type: 'code',
+			state: state,
+			redirect_uri: 'localhost:5173/api/login'
 		};
-		options.response_type = 'code';
 		window.amazon.Login.authorize(options, async (response: any) => {
 			if (response.error) {
 				alert('oauth error ' + response.error);
+				return;
+			}
+			if (response.state != state) {
+				alert('CSRF attempt detected');
 				return;
 			}
 			
