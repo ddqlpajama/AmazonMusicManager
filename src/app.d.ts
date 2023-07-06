@@ -11,7 +11,7 @@ declare global {
 	interface Window {
 		amazon: any;
 		options: any;
-		onAmazonLoginReady: () => void
+		onAmazonLoginReady: () => void;
 	}
 }
 
