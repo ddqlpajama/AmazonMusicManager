@@ -1,37 +1,24 @@
 <script lang="ts">
-	const handleAmazonLoginClicked = () => {
+	import { GetAmazonLoginToken, type LoginRequestOptions } from '$lib/services/amazon/authService';
+
+	const generateRandomString = (): string => {
 		const byteArray = new Uint8Array(32);
 		crypto.getRandomValues(byteArray);
-		const state = Array.from(byteArray)
+		return Array.from(byteArray)
 			.map((byte) => byte.toString(16).padStart(2, '0'))
 			.join('');
+	};
 
-		let options = {
+	const handleAmazonLoginClicked = () => {
+		const state = generateRandomString();
+		let options: LoginRequestOptions = {
 			scope: 'profile',
 			response_type: 'code',
-			state: state,
-			redirect_uri: 'localhost:5173/api/login'
+			state: state
 		};
-		window.amazon.Login.authorize(options, async (response: any) => {
-			if (response.error) {
-				alert('oauth error ' + response.error);
-				return;
-			}
-			if (response.state != state) {
-				alert('CSRF attempt detected');
-				return;
-			}
 
-			const loginResponse = await fetch('/api/login', {
-				method: 'POST',
-				body: response.code,
-				headers: {
-					'content-type': 'text/plain'
-				}
-			});
-
-			console.log(await loginResponse.json());
-		});
+		const loginToken = GetAmazonLoginToken(state, options);
+		console.log(loginToken);
 	};
 </script>
 
