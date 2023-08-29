@@ -1,5 +1,6 @@
 import type { RequestEvent } from '@sveltejs/kit';
 import { sendAccessTokenRequest } from '$lib/services/amazon/tokenService';
+import { getCurrentUser } from '$lib/services/amazon/musicService';
 
 export const POST = async (event: RequestEvent) => {
 	const authCode = await event.request.text();
@@ -17,5 +18,6 @@ export const POST = async (event: RequestEvent) => {
 		maxAge: amazonToken.expiresIn + 1800
 	});
 
+	const musicUser = await getCurrentUser(amazonToken.accessToken); // Not Working :(
 	return new Response();
 };

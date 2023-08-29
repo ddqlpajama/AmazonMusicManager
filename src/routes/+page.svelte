@@ -12,7 +12,10 @@
 	const handleAmazonLoginClicked = () => {
 		const state = generateRandomString();
 		let options: LoginRequestOptions = {
-			scope: 'profile',
+			scope: 'amazon_music',
+			scope_data: {
+				amazon_music: 'access'
+			},
 			response_type: 'code',
 			state: state
 		};

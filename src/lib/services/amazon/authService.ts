@@ -5,6 +5,7 @@ import { PUBLIC_LWA_CLIENT_ID } from '$env/static/public';
 
 export interface LoginRequestOptions {
 	scope: string;
+	scope_data?: object;
 	response_type: string;
 	state: string;
 }
