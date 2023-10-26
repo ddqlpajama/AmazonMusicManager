@@ -1,11 +1,11 @@
-import { AMAZON_PROFILE_ID } from '$env/static/private';
+import { SPOTIFY_CLIENT_SECRET_ID } from '$env/static/private';
 
 const amazonMusicUrl = 'https://api.music.amazon.dev';
 
 const getCurrentUser = async (authToken: string) => {
 	const response = await fetch(`${amazonMusicUrl}/users/me`, {
 		headers: {
-			'x-api-key': AMAZON_PROFILE_ID,
+			'x-api-key': SPOTIFY_CLIENT_SECRET_ID,
 			Authorization: `Bearer ${authToken}`
 		}
 	});

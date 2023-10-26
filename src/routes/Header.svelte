@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-	import logo from '$lib/images/svelte-logo.svg';
 	import github from '$lib/images/github.svg';
 
 	interface NavLink {
@@ -24,7 +22,7 @@
 		{/each}
 	</div>
 	<div class="flex-1 justify-end">
-		<a class="w-10" href="https://github.com/ddqlpajama/AmazonMusicManager">
+		<a class="w-10" href="https://github.com/ddqlpajama/Classi-liszt">
 			<img src={github} alt="GitHub" />
 		</a>
 	</div>

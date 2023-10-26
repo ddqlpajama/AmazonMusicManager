@@ -1,6 +1,6 @@
 import { error } from '@sveltejs/kit';
-import { PUBLIC_LWA_CLIENT_ID } from '$env/static/public';
-import { LWA_CLIENT_SECRET_ID } from '$env/static/private';
+import { PUBLIC_SPOTIFY_CLIENT_ID } from '$env/static/public';
+import { SPOTIFY_CLIENT_SECRET_ID } from '$env/static/private';
 
 const amazonAuthUrl = 'https://api.amazon.com/auth/o2/token';
 
@@ -31,8 +31,8 @@ export const sendAccessTokenRequest = async (authCode: string): Promise<LoginTok
 	const accessTokenReqBody = {
 		grant_type: 'authorization_code',
 		code: authCode,
-		client_id: PUBLIC_LWA_CLIENT_ID,
-		client_secret: LWA_CLIENT_SECRET_ID
+		client_id: PUBLIC_SPOTIFY_CLIENT_ID,
+		client_secret: SPOTIFY_CLIENT_SECRET_ID
 	};
 
 	const response = await fetch(amazonAuthUrl, {

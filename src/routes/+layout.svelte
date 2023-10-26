@@ -1,25 +1,9 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import Header from './Header.svelte';
 	import './styles.css';
-	import { SetAmazonApi } from '$lib/services/amazon/authService';
-
-	let amazonroot: HTMLDivElement;
-
-	onMount(() => {
-		let a = document.createElement('script');
-		a.type = 'text/javascript';
-		a.async = true;
-		a.id = 'amazon-login-sdk';
-		a.src = 'https://assets.loginwithamazon.com/sdk/na/login1.js';
-		amazonroot.appendChild(a);
-
-		SetAmazonApi();
-	});
 </script>
 
 <div class="flex flex-col min-h-screen">
-	<div bind:this={amazonroot} />
 	<Header />
 
 	<slot />

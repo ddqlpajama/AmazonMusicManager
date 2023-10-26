@@ -10,11 +10,6 @@ declare global {
 		// interface PageData {}
 		// interface Platform {}
 	}
-
-	interface Window {
-		amazon: any;
-		onAmazonLoginReady: () => void;
-	}
 }
 
 export {};
